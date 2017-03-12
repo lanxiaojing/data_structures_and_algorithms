@@ -93,6 +93,15 @@ List.prototype = {
         }
         return this.currNode;
     },
+    advance: function(n) {
+        // 向前移动n个节点
+    },
+    back: function(n) {
+        // 向后移动n个节点
+    },
+    show: function() {
+        // 显示当前节点
+    },
     _contains: function(ele) {
         // 判断给定值是否在链表里
         if (this._indexOf(ele) > -1) {
@@ -167,6 +176,12 @@ List.prototype = {
         return false
     }
 }
+
+// 练习：使用单向链表纪录用户输入的一组测试成绩
+
+// 四十个人围成一个圈，从一个人开始，数到第三个人人时将第三个人杀死，然后再数，直到杀光所有人。计算两个位置，站在这两个位置的人得以幸存。写一段程序，将n个人围一圈，第m个人会被杀死，计算一圈人中哪两个人会存活。
+
+
 
 // 栈
 function Stack() {
