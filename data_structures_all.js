@@ -1,3 +1,4 @@
+// 基础节点类
 function Node(val) {
     this.prev = null;
     this.next = null;
