@@ -1,4 +1,3 @@
-2.9.1
 function Grade(score) {
 	this.scores = [];
 	this.add = add;

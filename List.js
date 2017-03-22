@@ -12,13 +12,13 @@ function List() {
     this.length = 0;
 }
 
-List.prototype.clear = function () {
+List.prototype.clear = function() {
     // 清空链表
     this.length = 0;
     this.currNode = this.head = null;
 };
 
-List.prototype.toString = function () {
+List.prototype.toString = function() {
     // 打印链表
     var curr = this.head,
         str = curr.val + ' ';
@@ -29,7 +29,7 @@ List.prototype.toString = function () {
     return str
 };
 
-List.prototype.insert = function (ele, after) {
+List.prototype.insert = function(ele, after) {
     // 将给定值插入到after之后
     var newNode = new Node(ele);
     this._moveTo(after);
@@ -39,7 +39,7 @@ List.prototype.insert = function (ele, after) {
     ++this.length;
 };
 
-List.prototype.append = function (ele) {
+List.prototype.append = function(ele) {
     // 在链表尾部添加新节点
     var newNode = new Node(ele);
     if (!this.head) {
@@ -53,7 +53,7 @@ List.prototype.append = function (ele) {
     ++length;
 };
 
-List.prototype.remove = function (ele) {
+List.prototype.remove = function(ele) {
     // 删除给定值
     var ndoe;
     if (!this._contains(ele)) {
@@ -90,7 +90,7 @@ List.prototype.remove = function (ele) {
     return true
 };
 
-List.prototype.find = function (ele) {
+List.prototype.find = function(ele) {
     // 寻找一个值，如果值在链表里则返回该值，否则返回false
     this._front();
     while (this.currNode.val !== ele) {
@@ -99,19 +99,19 @@ List.prototype.find = function (ele) {
     return this.currNode;
 };
 
-List.prototype.advance = function (n) {
+List.prototype.advance = function(n) {
     // 向前移动n个节点
 };
 
-List.prototype.back = function (n) {
+List.prototype.back = function(n) {
     // 向后移动n个节点
 };
 
-List.prototype.show = function () {
+List.prototype.show = function() {
     // 显示当前节点
 };
 
-List.prototype._contains = function (ele) {
+List.prototype._contains = function(ele) {
     // 判断给定值是否在链表里
     if (this._indexOf(ele) > -1) {
         return true
@@ -119,7 +119,7 @@ List.prototype._contains = function (ele) {
     return false
 };
 
-List.prototype._indexOf = function (ele) {
+List.prototype._indexOf = function(ele) {
     // 返回给定值在链表中的位置，若不在链表中返回－1
     var i = 0,
         curr = this.head;
@@ -136,29 +136,29 @@ List.prototype._indexOf = function (ele) {
     return -1
 };
 
-List.prototype._front = function () {
+List.prototype._front = function() {
     // 将链表当前位置移动到第一位
     this.currNode = this.head;
 };
 
-List.prototype._end = function () {
+List.prototype._end = function() {
     // 将链表当前位置移动到最后一位
     while (this._hasNext()) {
         this._next();
     }
 };
 
-List.prototype._prev = function () {
+List.prototype._prev = function() {
     // 将当前位置前移一位
     this.currNode = this.currNode.prev;
 };
 
-List.prototype._next = function () {
+List.prototype._next = function() {
     // 将当前位置后移一位
     this.currNode = this.currNode.next;
 };
 
-List.prototype._moveTo = function (ele) {
+List.prototype._moveTo = function(ele) {
     // 将当前位置移动到指定位置
     this._front();
     if (this.currNode.val === ele) {
@@ -173,21 +173,21 @@ List.prototype._moveTo = function (ele) {
     return false
 };
 
-List.prototype._hasNext = function () {
+List.prototype._hasNext = function() {
     if (this.currNode.next) {
         return true
     }
     return false
 };
 
-List.prototype._hasPrev = function () {
+List.prototype._hasPrev = function() {
     if (this.currNode.prev) {
         return true
     }
     return false
 };
 
-List.prototype._compare = function (ele1, ele2) {
+List.prototype._compare = function(ele1, ele2) {
     if (ele1.val === ele2.val && ele1.prev === ele2.prev && ele1.next === ele2.next) {
         return true
     }
@@ -195,5 +195,6 @@ List.prototype._compare = function (ele1, ele2) {
 }
 
 // 练习：使用单向链表纪录用户输入的一组测试成绩
+
 // 四十个人围成一个圈，从一个人开始，数到第三个人人时将第三个人杀死，然后再数，直到杀光所有人。计算两个位置，站在这两个位置的人得以幸存。写一段程序，将n个人
 // 围 一圈，第m个人会被杀死，计算一圈人中哪两个人会存活。
